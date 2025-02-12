@@ -12,7 +12,7 @@ function ClassAnalytics() {
 
     const fetchData = async () => {
         try {
-            const response = await fetch(`http://localhost:8000/api/class/getByName/${name}`);
+            const response = await fetch(`https://school-managment-system-backend.onrender.com/api/class/getByName/${name}`);
             const data = await response.json();
             setClassData(data);
         } catch (error) {
