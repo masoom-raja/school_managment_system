@@ -1,5 +1,5 @@
 import Class from '../models/class_model.js';
-import Teacher from '../models/Teacher_model.js';
+import Teacher from '../models/teacher_model.js';
 import { errorHandler } from '../utils/error.js';
 
 export const createTeacher = async (req, res, next) => {
