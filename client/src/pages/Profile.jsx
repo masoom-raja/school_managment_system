@@ -69,7 +69,7 @@ export default function Profile() {
     console.log(formData)
     try {
       dispatch(updateUserStart());
-      const res = await fetch(`http://localhost:8000/api/auth/update/${currentUser.rest._id}`, {
+      const res = await fetch(`https://school-managment-system-backend.onrender.com/api/auth/update/${currentUser.rest._id}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -94,7 +94,7 @@ export default function Profile() {
   const handleDeleteUser =async()=>{
     try {
       dispatch(deleteUserStart());
-      const res = await fetch(`http://localhost:8000/api/auth/delete/${currentUser.rest._id}`,{
+      const res = await fetch(`https://school-managment-system-backend.onrender.com/api/auth/delete/${currentUser.rest._id}`,{
         method:'DELETE',
       });
       const data = await res.json();
@@ -110,7 +110,7 @@ export default function Profile() {
   const handleSignOut = async () => {
     try {
       dispatch(signOutUserStart());
-      const res = await fetch('http://localhost:8000/api/auth/signout');
+      const res = await fetch('https://school-managment-system-backend.onrender.com/api/auth/signout');
       const data = await res.json();
       if (data.success === false) {
         dispatch(deleteUserFailure(data.message));

@@ -16,8 +16,8 @@ function ProfitAnalysis() {
 
     const fetchData = async () => {
         try {
-            const response = await fetch(`http://localhost:8000/api/teacher/getTeacherSalariesSum`);
-            const response2 = await fetch(`http://localhost:8000/api/student/getStudentFeesSum`);
+            const response = await fetch(`https://school-managment-system-backend.onrender.com/api/teacher/getTeacherSalariesSum`);
+            const response2 = await fetch(`https://school-managment-system-backend.onrender.com/api/student/getStudentFeesSum`);
             const data = await response.json();
             const data2 = await response2.json();
             setData(data.sum);

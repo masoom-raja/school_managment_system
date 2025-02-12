@@ -23,7 +23,7 @@ function Table({ modelName }) {
   };
   const handleDelete =async(lowerCaseModelName,id)=>{
     try {
-      const response = await fetch(`http://localhost:8000/api/${lowerCaseModelName}/delete/${id}`,{
+      const response = await fetch(`https://school-managment-system-backend.onrender.com/api/${lowerCaseModelName}/delete/${id}`,{
         method:'DELETE',
       });
       const data = await response.json();
@@ -38,7 +38,7 @@ function Table({ modelName }) {
   const fetchData = async () => {
     try {
       const lowerCaseModelName = modelName.toLowerCase();
-      const response = await fetch(`http://localhost:8000/api/${lowerCaseModelName}/get`,); 
+      const response = await fetch(`https://school-managment-system-backend.onrender.com/api/${lowerCaseModelName}/get`,); 
       const data = await response.json();
       console.log(data,"response data")
       const rowsWithSelectedFields = data.map((row, index) => {
