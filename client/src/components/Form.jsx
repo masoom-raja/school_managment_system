@@ -22,7 +22,7 @@ function DynamicForm({ modelName }) {
 
   const fetchModelSchema = async () => {
     try {
-      const response = await fetch(`http://localhost:8000/api/${modelName.toLowerCase()}/getForm`);
+      const response = await fetch(`https://school-managment-system-backend.onrender.com/api/${modelName.toLowerCase()}/getForm`);
       const data = await response.json();
       console.log(data,"form...")
       const modelSchema = data[0];
@@ -47,7 +47,7 @@ function DynamicForm({ modelName }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch(`http://localhost:8000/api/${modelName.toLowerCase()}/create`,{
+      const response = await fetch(`https://school-managment-system-backend.onrender.com/api/${modelName.toLowerCase()}/create`,{
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
